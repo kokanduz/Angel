@@ -1,25 +1,37 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector(".hero h1");
-    const wings = document.querySelector(".hero-art .wings");
-    const comingSoon = document.querySelector(".hero-copy:after");
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
 
-    // ANGEL logotipi kirish animatsiyasi
-    if (logo) {
-        logo.style.opacity = "0";
+function closeMenu() {
+  menuToggle.classList.remove("active");
+  nav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Menyuni ochish");
+}
 
-        setTimeout(() => {
-            logo.style.transition = "opacity 1.5s ease";
-            logo.style.opacity = "1";
-        }, 300);
-    }
+menuToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
 
-    // Qanotlarga mayin harakat
-    if (wings) {
-        wings.style.transformOrigin = "center";
-        wings.style.animation = "float 4s ease-in-out infinite";
-    }
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Menyuni yopish" : "Menyuni ochish"
+  );
+});
 
-    // Sahifa ochilganda konsolga xabar
-    console.log("ANGEL — TEZ KUNDA ✨");
+nav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 700) {
+    closeMenu();
+  }
 });
