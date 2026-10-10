@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080811">
+  <title>MangaZone — Anime Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <header class="header">
+    <a class="logo" href="#home">MANGA<span>ZONE</span><b>.</b></a>
+    <nav id="navigation">
+      <a href="#home">Bosh sahifa</a>
+      <a href="#catalog">Manga</a>
+      <a href="#popular">Mashhur</a>
+      <a href="#about">Biz haqimizda</a>
+    </nav>
+    <div class="header-actions">
+      <button id="favoriteToggle" class="icon-btn" aria-label="Sevimlilar">♡ <span id="favoriteCount">0</span></button>
+      <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menyu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> ANIME UNIVERSE · 2026</div>
+        <h1>Hikoyangni<br><span class="gradient-text">kashf et.</span></h1>
+        <p>Cheksiz sarguzashtlar, kuchli qahramonlar va unutilmas hikoyalar. O'zingga mos manga olamini kashf et!</p>
+        <div class="hero-buttons">
+          <a href="#catalog" class="button button-primary">Manga ko'rish <span>↗</span></a>
+          <a href="#popular" class="button button-outline">Mashhurlar ↓</a>
+        </div>
+        <div class="stats">
+          <div><strong>500+</strong><span>Manga</span></div>
+          <div><strong>50K+</strong><span>O'quvchilar</span></div>
+          <div><strong>100+</strong><span>Janrlar</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="hero-frame">
+          <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=85" alt="Anime artwork">
+          <div class="hero-overlay"></div>
+          <div class="hero-label"><span>🔥</span><div><small>HAFTANING TOPI</small><strong>Manga olamiga xush kelibsiz</strong></div></div>
+        </div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="catalog section" id="catalog">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">SEN UCHUN TANLANDI</span>
+          <h2>Manga kutubxonasi</h2>
+          <p>O'zingga yoqqan hikoyani top.</p>
+        </div>
+        <span id="resultCount" class="result-count">0 ta manga</span>
+      </div>
+
+      <div class="search-toolbar">
+        <label class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Manga nomini qidir..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <select id="sortSelect" aria-label="Saralash">
+          <option value="popular">Mashhurligi</option>
+          <option value="rating">Yuqori reyting</option>
+          <option value="az">A dan Z gacha</option>
+          <option value="chapters">Boblar soni</option>
+        </select>
+      </div>
+
+      <div class="genre-filters" id="genreFilters">
+        <button class="filter-btn active" data-genre="all">Barchasi</button>
+        <button class="filter-btn" data-genre="Action">⚔ Action</button>
+        <button class="filter-btn" data-genre="Adventure">🌍 Adventure</button>
+        <button class="filter-btn" data-genre="Fantasy">✨ Fantasy</button>
+        <button class="filter-btn" data-genre="Romance">💗 Romance</button>
+        <button class="filter-btn" data-genre="Drama">🎭 Drama</button>
+        <button class="filter-btn" data-genre="Comedy">😂 Comedy</button>
+        <button class="filter-btn" data-genre="Horror">👻 Horror</button>
+      </div>
+
+      <div class="catalog-info">
+        <span id="activeFilterLabel">Barcha mangalar</span>
+        <button id="resetFilters" class="text-btn">Filtrlarni tozalash ↺</button>
+      </div>
+
+      <div class="manga-grid" id="mangaGrid"></div>
+      <div id="emptyState" class="empty-state hidden">
+        <span>🔎</span>
+        <h3>Manga topilmadi</h3>
+        <p>Boshqa nom yoki janrni tanlab ko'ring.</p>
+        <button id="emptyReset" class="button button-primary">Barchasini ko'rish</button>
+      </div>
+      <button id="loadMore" class="button button-outline load-more">Yana ko'rsatish ↓</button>
+    </section>
+
+    <section class="featured section" id="popular">
+      <div class="featured-copy">
+        <span class="eyebrow">MANGAZONE TAVSIYASI</span>
+        <h2>Yangi dunyolar<br><span class="gradient-text">seni kutmoqda.</span></h2>
+        <p>Sevimli qahramonlaring bilan sarguzashtni boshlagin. Yangi mangalarni top, o'z ro'yxatingni tuz.</p>
+        <a href="#catalog" class="button button-primary">Hozir kashf et ↗</a>
+      </div>
+      <div class="featured-art">
+        <div class="featured-shape"></div>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=85" alt="Manga tavsiyasi" loading="lazy">
+        <span class="featured-stamp">TOP<br>10</span>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <span class="eyebrow">BIZ HAQIMIZDA</span>
+      <h2>Manga ishqibozlari uchun.</h2>
+      <p>MangaZone — sevimli manga hikoyalaringni kashf qilish va o'z tanlovlaringni saqlash uchun yaratilgan demo platforma.</p>
+      <div class="about-cards">
+        <article><span>⚡</span><h3>Tezkor qidiruv</h3><p>Kerakli manga nomini tez top.</p></article>
+        <article><span>🎨</span><h3>Zamonaviy dizayn</h3><p>Neon ranglar va silliq animatsiyalar.</p></article>
+        <article><span>❤️</span><h3>Sevimlilar</h3><p>Yoqtirgan mangalaringni ro'yxatga qo'sh.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#home">MANGA<span>ZONE</span><b>.</b></a>
+    <p>© 2026 MangaZone. Demo loyiha.</p>
+    <a href="#home">Yuqoriga ↑</a>
+  </footer>
+
+  <div class="modal hidden" id="mangaModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modalClose" aria-label="Yopish">✕</button>
+      <img id="modalImage" src="" alt="Manga muqovasi">
+      <div class="modal-body">
+        <span id="modalGenre" class="eyebrow"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div id="modalMeta" class="modal-meta"></div>
+        <button id="modalFavorite" class="button button-primary">♡ Sevimlilarga qo'shish</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top" aria-label="Yuqoriga">↑</button>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
