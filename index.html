@@ -1,70 +1,181 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGEL | Tez kunda</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#032e2e">
+  <meta name="description" content="ANGEL — yangi uslub va yangi davr. Tez kunda.">
+  <title>ANGEL — Tez kunda</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <header class="header">
+    <a class="logo" href="#bosh-sahifa" aria-label="ANGEL bosh sahifa">
+      ANGEL<span>®</span>
+    </a>
 
-    <main class="angel-container">
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Menyuni ochish" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
 
-        <!-- Farishta qanotlari logotipi -->
-        <svg class="angel-wings"
-             viewBox="0 0 600 340"
-             xmlns="http://www.w3.org/2000/svg"
-             aria-label="ANGEL farishta qanotlari logotipi">
+    <nav class="nav" id="nav">
+      <a href="#bosh-sahifa">Bosh sahifa</a>
+      <a href="#brend">Brend haqida</a>
+      <a href="#aloqa">Aloqa</a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" id="bosh-sahifa">
+      <div class="glow glow-one"></div>
+      <div class="glow glow-two"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          YANGI DAVR BOSHLANMOQDA
+        </p>
+
+        <div class="wings-wrap">
+          <div class="halo"></div>
+
+          <svg class="wings" viewBox="0 0 700 330"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img" aria-label="Oltin farishta qanotlari">
             <defs>
-                <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#fff3b4"/>
-                    <stop offset="35%" stop-color="#f5cd69"/>
-                    <stop offset="65%" stop-color="#b97618"/>
-                    <stop offset="85%" stop-color="#ffe79a"/>
-                    <stop offset="100%" stop-color="#a45c0b"/>
-                </linearGradient>
+              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff4bf"/>
+                <stop offset="24%" stop-color="#f5d77f"/>
+                <stop offset="53%" stop-color="#b77a20"/>
+                <stop offset="72%" stop-color="#ffe9a0"/>
+                <stop offset="100%" stop-color="#a76516"/>
+              </linearGradient>
+              <linearGradient id="feather" x1="0" y1="0" x2="0.8" y2="1">
+                <stop offset="0%" stop-color="#fff2b5"/>
+                <stop offset="55%" stop-color="#e7b84e"/>
+                <stop offset="100%" stop-color="#9d6118"/>
+              </linearGradient>
+              <filter id="goldShadow" x="-30%" y="-30%"
+                width="160%" height="160%">
+                <feGaussianBlur stdDeviation="5"/>
+              </filter>
             </defs>
 
-            <g fill="url(#gold)" stroke="#f5cd69" stroke-width="2.5">
+            <ellipse cx="350" cy="155" rx="210" ry="110"
+              fill="#e4b84f" opacity=".12" filter="url(#goldShadow)"/>
 
-                <!-- Chap qanot -->
-                <path d="M292 120
-                C230 40 150 10 70 20
-                C106 50 122 77 155 100
-                C103 84 62 72 20 78
-                C61 111 95 132 146 141
-                C100 144 61 153 38 166
-                C86 187 127 189 170 177
-                C137 199 113 220 102 241
-                C153 250 190 232 218 204
-                C205 238 204 263 218 285
-                C260 269 279 229 292 180 Z"/>
+            <g fill="url(#feather)" stroke="#ffe8a0"
+              stroke-width="1.2" stroke-linejoin="round">
 
-                <!-- O‘ng qanot -->
-                <path d="M308 120
-                C370 40 450 10 530 20
-                C494 50 478 77 445 100
-                C497 84 538 72 580 78
-                C539 111 505 132 454 141
-                C500 144 539 153 562 166
-                C514 187 473 189 430 177
-                C463 199 487 220 498 241
-                C447 250 410 232 382 204
-                C395 238 396 263 382 285
-                C340 269 321 229 308 180 Z"/>
+              <!-- Chap qanot -->
+              <path d="M337 154
+                C284 79 201 30 85 30
+                C112 55 136 80 158 104
+                C113 83 70 76 24 83
+                C69 119 111 139 159 151
+                C111 151 75 166 49 184
+                C104 201 149 200 194 185
+                C157 212 135 237 127 261
+                C182 258 226 231 254 203
+                C250 237 260 267 280 289
+                C313 253 329 207 337 154Z"/>
 
+              <!-- O‘ng qanot -->
+              <path d="M363 154
+                C416 79 499 30 615 30
+                C588 55 564 80 542 104
+                C587 83 630 76 676 83
+                C631 119 589 139 541 151
+                C589 151 625 166 651 184
+                C596 201 551 200 506 185
+                C543 212 565 237 573 261
+                C518 258 474 231 446 203
+                C450 237 440 267 420 289
+                C387 253 371 207 363 154Z"/>
             </g>
 
-        </svg>
+            <g fill="none" stroke="#fff0b1"
+              stroke-width="2" opacity=".8">
+              <path d="M332 157 Q240 80 112 49"/>
+              <path d="M321 176 Q220 122 71 98"/>
+              <path d="M312 194 Q226 170 95 175"/>
+              <path d="M314 214 Q258 226 158 246"/>
+              <path d="M368 157 Q460 80 588 49"/>
+              <path d="M379 176 Q480 122 629 98"/>
+              <path d="M388 194 Q474 170 605 175"/>
+              <path d="M386 214 Q442 226 542 246"/>
+            </g>
 
-        <!-- Brend nomi -->
+            <path d="M350 145
+              L360 165 L382 168 L366 184
+              L370 207 L350 196 L330 207
+              L334 184 L318 168 L340 165Z"
+              fill="url(#gold)" stroke="#fff0b1" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <p class="brand-label">YANGI USLUB. YANGI HIS.</p>
+
         <h1>ANGEL</h1>
 
-        <!-- Pastdagi yozuv -->
-        <p class="coming-soon">TEZ KUNDA</p>
+        <div class="title-line">
+          <span></span>
+          <p>TEZ KUNDA</p>
+          <span></span>
+        </div>
 
-    </main>
+        <p class="hero-description">
+          Biz tayyormiz. Siz ham tayyor turing.
+          O‘zgacha uslub bilan tanishuvimizga oz qoldi.
+        </p>
 
+        <a href="#brend" class="discover-link">
+          BIZ HAQIMIZDA
+          <span>↓</span>
+        </a>
+      </div>
+
+      <div class="hero-bottom">
+        <span>O‘Z USLUBINGNI TOP</span>
+        <span class="bottom-center">A · 01</span>
+        <span>YANGI BOSQICH</span>
+      </div>
+    </section>
+
+    <section class="about section" id="brend">
+      <p class="eyebrow">ANGEL HAQIDA</p>
+      <h2>O‘zing bo‘lish —<br>eng yaxshi uslub.</h2>
+      <p class="about-text">
+        ANGEL — o‘ziga xoslik, ishonch va zamonaviy uslub
+        g‘oyasi asosida yaratilayotgan brend. Biz yangi
+        bosqichga tayyorlanyapmiz. Biz bilan qoling —
+        eng qiziq voqealar hali oldinda.
+      </p>
+      <div class="about-mark">A</div>
+    </section>
+
+    <section class="contact section" id="aloqa">
+      <p class="eyebrow">BIZ BILAN QOLING</p>
+      <h2>Bu hali boshlanishi.</h2>
+      <p>
+        ANGEL yangiliklarini kuzatib boring.
+        Tez orada siz bilan yana uchrashamiz.
+      </p>
+      <a class="contact-link" href="#bosh-sahifa">
+        YUQORIGA QAYTISH ↑
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="logo" href="#bosh-sahifa">ANGEL<span>®</span></a>
+    <p>© 2026 ANGEL. BARCHA HUQUQLAR HIMOYALANGAN.</p>
+    <a href="#bosh-sahifa">TEZ KUNDA ✦</a>
+  </footer>
 </body>
 </html>
